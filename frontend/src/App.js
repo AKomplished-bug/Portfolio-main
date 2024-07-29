@@ -46,8 +46,8 @@ const App = () => (
       </main>
       <footer>
         <div className="footer-links">
-          <a href="#">About</a>
-          <a href="#">Contact</a>
+          <a href="/home">About</a>
+          <a href="/contact">Contact</a>
         </div>
       </footer>
     </div>
