@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
 /* Reset and base styles */
 * {
   box-sizing: border-box;
@@ -5,9 +7,13 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #fff;
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   color: #000;
   line-height: 1.6;
 }
@@ -26,22 +32,37 @@ header {
 .top-nav {
   display: flex;
   justify-content: flex-end;
-  padding: 20px 40px; /* Added padding for better spacing */
+  padding: 20px 40px;
 }
-
 
 .nav-item {
   color: #000;
   text-decoration: none;
-  margin-left: 25px; /* Increased from 15px */
-  font-size: 16px; /* Increased from 13px */
-  font-weight: 500; /* Made the text slightly bolder */
-  transition: color 0.3s ease;
+  margin-left: 25px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.2s ease;
+  position: relative;
+}
+
+.nav-item::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #4285F4;
+  transition: width 0.3s ease;
+}
+
+.nav-item:hover::after {
+  width: 100%;
 }
 
 .nav-item:hover {
-  text-decoration: none; /* Removed underline on hover */
-  color: #4285F4; /* Changed to Google blue on hover */
+  color: #4285F4;
+  transform: scale(1.05);
 }
 
 .nav-item.active {
@@ -56,15 +77,23 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px; /* Increased top/bottom padding */
-  margin-top: -40px; /* Move the content up slightly to balance the larger logo */
+  padding: 20px;
+  margin-top: -40px;
+}
+
+@keyframes logoFadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .logo {
-  font-size: 6rem; /* Increased from 5rem */
+  font-size: 6rem;
   font-weight: bold;
-  margin-bottom: 20px; /* Increased from 20px for better spacing */
+  margin-bottom: 20px;
   text-align: center;
+  animation: logoFadeIn 1s ease-out;
+  cursor: default;
+  user-select: none;
 }
 
 .logo a {
@@ -80,16 +109,19 @@ main {
 /* Chatbot/Search component */
 .search-container {
   width: 100%;
-  max-width: 584px; /* Increased from 584px */
-  margin-bottom: 20px; /* Increased from 20px */
+  max-width: 584px;
+  margin-bottom: 20px;
 }
 
 .search-box {
   display: flex;
+  align-items: center;
   border: 1px solid #dfe1e5;
   border-radius: 24px;
-  padding: 5px 8px 0 16px;
+  padding: 5px 8px 5px 16px;
   height: 44px;
+  transition: all 0.3s ease;
+  background-color: #fff;
 }
 
 .search-box:hover,
@@ -103,12 +135,20 @@ main {
   border: none;
   outline: none;
   font-size: 16px;
+  background: transparent;
 }
 
 .search-button {
   background: transparent;
   border: none;
   cursor: pointer;
+  padding: 0 8px;
+}
+
+.search-button svg {
+  fill: #9aa0a6;
+  height: 24px;
+  width: 24px;
 }
 
 /* Buttons */
@@ -119,11 +159,19 @@ main {
 }
 
 .google-button {
-  font-size: 15px; /* Increased from 14px */
-  margin: 11px 6px; /* Increased horizontal margin */
-  padding: 0 18px; /* Increased horizontal padding */
-  height: 40px; /* Increased from 36px */
-  min-width: 120px; /* Set a minimum width */
+  font-size: 14px;
+  margin: 11px 4px;
+  padding: 0 16px;
+  height: 36px;
+  min-width: 54px;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid #f8f9fa;
+  border-radius: 4px;
+  color: #3c4043;
+  background-color: #f8f9fa;
+  transition: all 0.2s ease;
 }
 
 .google-button:hover {
@@ -150,38 +198,38 @@ footer {
   text-decoration: none;
   margin: 0 10px;
   font-size: 14px;
+  transition: transform 0.2s ease;
 }
 
 .footer-links a:hover {
   text-decoration: underline;
+  transform: scale(1.05);
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
   .logo {
-    font-size: 6rem; /* Slightly smaller on mobile, but still large */
+    font-size: 4rem;
   }
-
+  
   .top-nav {
-    justify-content: center; /* Center the nav items on smaller screens */
+    justify-content: center;
     padding: 15px;
   }
-
+  
   .nav-item {
-    font-size: 14px; /* Slightly smaller on mobile */
-    margin: 0 10px; /* Equal margin on both sides for centering */
+    font-size: 14px;
+    margin: 0 10px;
   }
-
+  
   .search-container {
     width: 90%;
   }
-
+  
   .google-button {
-    min-width: 100px; /* Smaller minimum width on mobile */
+    min-width: 100px;
   }
 }
-
-
 
 /* Achievements */
 .achievements-container {
