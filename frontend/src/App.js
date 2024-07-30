@@ -1,11 +1,52 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom';
 import Projects from './pages/Projects';
 import Experience from './pages/Experience';
 import Achievements from './pages/Achievements';
 import CV from './pages/CV';
-import Chatbot from './components/Chatbot';
+import axios from 'axios';
 import './styles.css';
+
+const SearchComponent = () => {
+  const [query, setQuery] = useState('');
+  const [response, setResponse] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  const handleSearch = async () => {
+    setLoading(true);
+    try {
+      const result = await axios.post('http://localhost:5000/api/chat', { query });
+      setResponse(result.data.response);
+    } catch (error) {
+      console.error('Error fetching response:', error);
+      setResponse('An error occurred while fetching the response.');
+    }
+    setLoading(false);
+  };
+
+  return (
+    <div className="search-container">
+      <div className="search-box">
+        <input 
+          type="text" 
+          className="search"
+          value={query} 
+          onChange={(e) => setQuery(e.target.value)} 
+          placeholder="Ask about Athul's resume..."
+        />
+        <button className="search-button" onClick={handleSearch} disabled={loading}>
+          {loading ? 'Searching...' : 'Search'}
+        </button>
+      </div>
+      {response && (
+        <div className="response-container">
+          <h3>Response:</h3>
+          <p>{response}</p>
+        </div>
+      )}
+    </div>
+  );
+};
 
 const App = () => (
   <Router>
@@ -31,7 +72,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={
             <>
-              <Chatbot />
+              <SearchComponent />
               <div className="buttons">
                 <button className="google-button">Search</button>
                 <button className="google-button">I'm Feeling Lucky</button>
