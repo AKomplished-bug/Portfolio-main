@@ -15,7 +15,7 @@ const SearchComponent = () => {
   const handleSearch = async () => {
     setLoading(true);
     try {
-      const result = await axios.post('http://localhost:5000/api/chat', { query });
+      const result = await axios.post('https://api-athul.albinvar.in/api/chat ', { query });
       setResponse(result.data.response);
     } catch (error) {
       console.error('Error fetching response:', error);
