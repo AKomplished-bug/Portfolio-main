@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom';
 import Projects from './pages/Projects';
-import Experience from './pages/Experience';
 import Achievements from './pages/Achievements';
 import CV from './pages/CV';
 import axios from 'axios';
@@ -54,7 +53,6 @@ const App = () => (
       <header>
         <nav className="top-nav">
           <NavLink to="/projects" className="nav-item">Projects</NavLink>
-          <NavLink to="/experience" className="nav-item">Experience</NavLink>
           <NavLink to="/achievements" className="nav-item">Achievements</NavLink>
           <NavLink to="/cv" className="nav-item">CV</NavLink>
         </nav>
@@ -80,7 +78,6 @@ const App = () => (
             </>
           } />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/experience" element={<Experience />} />
           <Route path="/achievements" element={<Achievements />} />
           <Route path="/cv" element={<CV />} />
         </Routes>
