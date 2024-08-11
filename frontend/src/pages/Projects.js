@@ -50,7 +50,7 @@ const Projects = () => {
     },
     {
       title: "NQueens Solver Contribution",
-      date: "April 2024",
+      date: "February 2023",
       description: "Implemented an example program in JavaSMT that solves the NQueens problem of any given size using Boolean formulas and SMT solvers. The program places queens on an N x N chessboard such that no two queens threaten each other, and it outputs a possible solution. The implementation demonstrates the use of SMT solvers in constraint satisfaction problems, ensuring the placement adheres to rules like one queen per row, column, and diagonal.",
       techStack: "Java, JavaSMT, Boolean Formula, SMT Solver, ImmutableList, ProverEnvironment",
       repoLink: "https://github.com/sosy-lab/java-smt/blob/master/src/org/sosy_lab/java_smt/example/NQueens.java",
