@@ -23,6 +23,12 @@ const SearchComponent = () => {
     setLoading(false);
   };
 
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      handleSearch();
+    }
+  };
+
   return (
     <div className="search-container">
       <div className="search-box">
@@ -31,6 +37,7 @@ const SearchComponent = () => {
           className="search"
           value={query} 
           onChange={(e) => setQuery(e.target.value)} 
+          onKeyDown={handleKeyDown} // Add this line
           placeholder="Ask about Athul's resume..."
         />
         <button className="search-button" onClick={handleSearch} disabled={loading}>
