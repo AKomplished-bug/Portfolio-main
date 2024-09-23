@@ -33,6 +33,14 @@ const Projects = () => {
       repoLinkText: "View on GitHub"
     },
     {
+      title: "University Grade Prediction",
+      date: "January 2023 – March 2023",
+      description: "Developed a machine learning model to predict university grades based on historical data. The project involved data preprocessing, feature selection, and model training using algorithms such as Random Forest and Gradient Boosting. Implemented a user-friendly web interface to input student data and retrieve predicted grades.",
+      techStack: "Python, Scikit-learn, Pandas, Flask, HTML, CSS",
+      repoLink: "https://github.com/AKomplished-bug/University-Grade-Prediction",
+      repoLinkText: "View on GitHub"
+    },
+    {
       title: "EduLex AI",
       date: "July 2024 – Ongoing",
       description: "EduLex AI is an innovative educational platform designed to support dyslexic students aged 8-18. It offers an AR/AI assistant teacher that provides personalized support and feedback, interactive games, and activities focused on phonemic awareness, decoding, reading comprehension, and vocabulary building. The platform also includes a community space for dyslexic users, interview preparation tools for dyslexic adults, and multilingual support, including Malayalam. Parents can track their children's learning progress in real-time.",
@@ -46,7 +54,7 @@ const Projects = () => {
       description: "The Medical Chatbot is an AI-powered application designed to assist users with medical queries through both text and voice interactions. It leverages advanced language models and vector databases to provide accurate and contextually relevant information from a wide range of medical documents. The chatbot supports users by enabling quick medical consultations and efficient information retrieval, making it an invaluable tool for healthcare providers, patients, and the general public.",
       techStack: "Python, Streamlit, Langchain, Pinecone, Hugging Face Transformers, Google Generative AI, SpeechRecognition, gTTS",
       repoLink: "https://github.com/AKomplished-bug/Medical-chatbot-",
-      repoLinkText: "View on Github"
+      repoLinkText: "View on GitHub"
     },
     {
       title: "NQueens Solver Contribution",
@@ -55,7 +63,14 @@ const Projects = () => {
       techStack: "Java, JavaSMT, Boolean Formula, SMT Solver, ImmutableList, ProverEnvironment",
       repoLink: "https://github.com/sosy-lab/java-smt/blob/master/src/org/sosy_lab/java_smt/example/NQueens.java",
       repoLinkText: "View on GitHub"
-
+    },
+    {
+      title: "Diabetes Prediction Web App",
+      date: "January 2024 – March 2024",
+      description: "Developed a web application for predicting diabetes using a machine learning model based on user input. The app features a user-friendly interface built with Streamlit, allowing users to enter health metrics and receive predictions. Implemented data visualization to help users understand risk factors and health trends.",
+      techStack: "Python, Streamlit, Scikit-learn, Pandas, NumPy",
+      repoLink: "https://github.com/AKomplished-bug/Diabetes-predicition-SVM-",
+      repoLinkText: "View on GitHub"
     }
   ];
 
